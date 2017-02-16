@@ -3,23 +3,19 @@
 <html>
 <head>
 	<title>Barbers on Demand</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="{% static 'index/css/semantic.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'index/css/global.css' %}">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="{% static 'index/css/semantic.min.js' %}"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'index/css/copcut.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'index/css/global.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-	<script src="{% static 'index/css/typed.js' %}" type="text/javascript"></script>
- 	<link rel="stylesheet" type="text/css" href="{% static 'index/css/typed.css' %">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="initial-bg-img"> <!--Helps with layers this is the initial layer which contains the landpage bg-->
-<div class="container-fluid initial-bg"> <!--holds the grey opacity bg-->
 
-	<nav class="navbar navbar-default" id="header">
+	<nav class="navbar navbar-default header" id="header">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
@@ -28,76 +24,87 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<div id="logo-vert"><a href="#" id="logo">CopCut</a></div>
+				<div id="logo-vert"><a href="#" id="logo" style="color: black;">Scheduler</a></div>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse" aria-expanded="true">
 			<ul class= "nav navbar-nav">
-				<li><a href="#">How It Works</a></li>
-				<li><a href="#">About</a></li>
+				<li><a href="#">Home</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">Become a Barber</a></li>
-			    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-			    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			    <li><a href="#signForm" id="signUp"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+			    <li><a href="#logForm" id="logIn"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
 	    	</ul>
+	    	<div id="logForm" class="popupContainer">
+	    		<div class="popUp">
+	    			<div class="block log-fb"><button class ="fb" style="width: 100%;"><img src="{% static 'index/images/fb-login.png' %}"></button></div>
+	    			<div class="divider">or</div>
+	    			<div class="log-email">
+	    				<form>
+	    					<input type="text" name="username" placeholder="Email Address">
+	    					<input type="text" name="password" placeholder="Password">
+	    					<div>
+		    					<div class="ui checkbox">
+									<input type="checkbox" name="example">
+									<label>Make my profile visible</label>
+								</div>
+		    					<a class="right" href="#">Reset Password</a>
+	    					</div>
+	    					<button type="submit" class="btn btn-info full-width">Sign In</button>
+	    					<hr>
+	    					<div class="vert-mid-group">
+	    						<p>Don't have an account?</p>
+	    						<button class="btn btn-outline-info right">Sign Up</button>
+	    					</div>
+	    				</form>
+	    			</div>
+	    		</div>
+	    	</div>
+	    	<div id="signForm" class="popupContainer">
+	    		<div class="popUp">
+	    			<div class="block log-fb"><button class ="fb" style="width: 100%;"><img src="{% static 'index/images/fb-login.png' %}"></button></div>
+	    			<div class="divider">or</div>
+	    			<div class="log-email">' %}
+	    				<form>
+	    					<input type="text" name="username" placeholder="Email Address">
+	    					<input type="text" name="password" placeholder="Password">
+	    					<div>
+		    					<div class="ui checkbox">
+									<input type="checkbox" name="remember">
+									<label>Remember Me</label>
+								</div>
+		    					<a class="right" href="#">Reset Password</a>
+	    					</div>
+	    					<button type="submit" class="btn btn-info full-width">Sign Up</button>
+	    					<hr>
+	    				</form>
+	    			</div>
+	    		</div>
+	    	</div>
 	    	</div>
 		</div>
 	</nav>
+	<div id="content">
 
-	<div class="container header-width-left">
-		<h1 class="initial-bg-heading" style="display: inline;">COP A </h1>
-		<div id="typed-strings">
-		<h1>HAIRSTYLE</h1>
-		<h1>HAIRCUT</h1>
-		<h1>LIFESTYLE</h1>
-		</div>
-		<h1 id="typed" class="initial-bg-heading" style="white-space:pre;display: inline;"></h1>
-		<h3 class='tab'>Booking the perfect barber is just a click away.</h3>
-		<form>
-		<div class="form-group">
-		  <select class="form-control" id="sel1" name="school" disabled>
-		  	<option selected>UC Santa Barbara</option>
-		  </select>
-		</div>
-		 <button class="btn btn-info">Search</button>
-		</form>
 	</div>
-</div><!--initial-bg-->
-</div><!--initial-bg-img-->
-<div class="container-fluid" id="steps">
-	<div class="container-fluid" id="instructions">
-		<div class="instruct-text"><img src="images/question-mark.png"><h2>Answer a few Questions!</h2><p>We will match you with a barber that best suits your needs and wants!</p></div>
-		<div class="instruct-text"><img src="images/search.png"><h2>Pick a Barber!</h2><p>Choose the barber who you like most! You'll be provided with a wide variety of information.</p></div>
-		<div class="instruct-text"><img src="images/barber-pole.png"><h2>Book A Session!</h2><p>It's as simple as that! Make sure to leave a review, and upload pictures of your cuts to promote your new barber.</div>
-	</div>
-	<div class="container-fluid" id="img-instruct">
-	<img src="images/temp.jpg">
-	</div>
-</div>
-</div>
-<div id=reviews>
-	<h1>CUTS THAT SATISFIED MANY</h1>
-	<article><img src="images/h1.jpg"><p>'I really enjoyed getting a cut from CopCut! He lined up my taper forreaaaalz'</br> -Nick Zeta, Sophomore '19</p>
-	</article>
-	<article><img src="images/h2.jpg"><p>'Campus Cuts never really took my hair seriously, so I decided to turn to CopCut. Now I can finally line up my fade with a ruler.'</br> -Moby Larryhill, Senior '16</p></article>
-	<article><img src="images/h3.jpg"><p>'I was always insecure about my yellow hair, but CopCut helped me find the right barber that brought my confidence right back!'</br> -Danisha Cowdirt, Junior '18</p></article>
-</div>
-<footer>
+	<footer>
 	<div id="policy">
 		<div class="block"><a href="#">About</a><a href="#">Policy</a><a href="#">FAQ</a></div>
-		<div class="block"><p>&#169; CopCut, LLC All rights reserved.</p></div>
+		<div class="block"><p>&#169; Scheduler, LLC All rights reserved.</p></div>
 	</div>
 	<div id="social">
-		<a href="#"><img src="images/facebook.png">
-		<a href="#"><img src="images/instagram.png">
-		<a href="#"><img src="images/youtube.png">
-		<a href="#"><img src="images/twitter.png">
+		<a href="#"><img src="{% static 'index/images/facebook.png' %}"></a>
+		<a href="#"><img src="{% static 'index/images/instagram.png' %}"></a>
+		<a href="#"><img src="{% static 'index/images/youtube.png' %}"></a>
+		<a href="#"><img src="{% static 'index/images/twitter.png' %}"></a>
 		</div>
 </footer>
 </body>
-<script type="text/javascript" src="copcut.js"></script>
+<script type="text/javascript" src="form.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" 
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-
+ <script type="text/javascript">
+ 	$('.ui.checkbox').checkbox();
+ </script>
 </html>
