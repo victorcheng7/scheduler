@@ -6,5 +6,9 @@ from django.http import HttpResponse
 #add redirect() when i want to redirect a view
 def index(request):
     context = {}
-    template = "index/index.html"
+    template = "index/base.html"
     return render(request, template, context)
+
+def signup(request):
+    template = "index/signup_popup.html"
+    return render (request, template, {})

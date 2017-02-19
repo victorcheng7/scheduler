@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Barbers on Demand</title>
+	<title>{% block title %}{% endblock %}</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="{% static 'index/css/semantic.min.css' %}">
@@ -14,7 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
 	<nav class="navbar navbar-default header" id="header">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -32,61 +31,19 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">Become a Barber</a></li>
-			    <li><a href="#signForm" id="signUp"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+			    <li><a href="/signup" id="signUp"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
 			    <li><a href="#logForm" id="logIn"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
 	    	</ul>
-	    	<div id="logForm" class="popupContainer">
-	    		<div class="popUp">
-	    			<div class="block log-fb"><button class ="fb" style="width: 100%;"><img src="{% static 'index/images/fb-login.png' %}"></button></div>
-	    			<div class="divider">or</div>
-	    			<div class="log-email">
-	    				<form>
-	    					<input type="text" name="username" placeholder="Email Address">
-	    					<input type="text" name="password" placeholder="Password">
-	    					<div>
-		    					<div class="ui checkbox">
-									<input type="checkbox" name="example">
-									<label>Make my profile visible</label>
-								</div>
-		    					<a class="right" href="#">Reset Password</a>
-	    					</div>
-	    					<button type="submit" class="btn btn-info full-width">Sign In</button>
-	    					<hr>
-	    					<div class="vert-mid-group">
-	    						<p>Don't have an account?</p>
-	    						<button class="btn btn-outline-info right">Sign Up</button>
-	    					</div>
-	    				</form>
-	    			</div>
-	    		</div>
 	    	</div>
-	    	<div id="signForm" class="popupContainer">
-	    		<div class="popUp">
-	    			<div class="block log-fb"><button class ="fb" style="width: 100%;"><img src="{% static 'index/images/fb-login.png' %}"></button></div>
-	    			<div class="divider">or</div>
-	    			<div class="log-email">' %}
-	    				<form>
-	    					<input type="text" name="username" placeholder="Email Address">
-	    					<input type="text" name="password" placeholder="Password">
-	    					<div>
-		    					<div class="ui checkbox">
-									<input type="checkbox" name="remember">
-									<label>Remember Me</label>
-								</div>
-		    					<a class="right" href="#">Reset Password</a>
-	    					</div>
-	    					<button type="submit" class="btn btn-info full-width">Sign Up</button>
-	    					<hr>
-	    				</form>
-	    			</div>
-	    		</div>
-	    	</div>
-	    	</div>
+
+             {% block signup %} {% endblock %}
 		</div>
 	</nav>
+
 	<div id="content">
 
-	</div>
+    <div>
+
 	<footer>
 	<div id="policy">
 		<div class="block"><a href="#">About</a><a href="#">Policy</a><a href="#">FAQ</a></div>

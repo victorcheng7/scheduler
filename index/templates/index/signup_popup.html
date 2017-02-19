@@ -1,0 +1,32 @@
+{% extends "index/base.html" %}
+
+{% load staticfiles %}
+
+{% block title %} Signup {% endblock %}
+
+{% block signup %}
+
+
+<div id="signForm" class="popupContainer">
+    <div class="popUp">
+        <div class="block log-fb"><button class ="fb" style="width: 100%;"><img src="{% static 'index/images/fb-login.png' %}"></button></div>
+        <div class="divider">or</div>
+        <div class="log-email">'
+            <form>
+                <input type="text" name="username" placeholder="Email Address">
+                <input type="text" name="password" placeholder="Password">
+                <div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="remember">
+                        <label>Remember Me</label>
+                    </div>
+                    <a class="right" href="#">Reset Password</a>
+                </div>
+                <button type="submit" class="btn btn-info full-width">Sign Up</button>
+                <hr>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
